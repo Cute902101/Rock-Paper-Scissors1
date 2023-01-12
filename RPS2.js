@@ -60,13 +60,37 @@ let compareInputs = (humanInput, computerInput) => {
     
 }
 
-//Function to play a game of Rock Paper Scissors
+//Function to play a round of Rock Paper Scissors
 let playRound = () => {
   playerInput = playerChoice();
   computerInput = getComputerChoice();
   console.log(compareInputs(playerInput, computerInput));
-
-  
 }
-playRound();
 
+//Add 5 rounds to the playRound function 
+let playGame = () =>{
+computerScore = 0
+playerScore = 0
+  for(i = 0; i < 5; i++){
+     playRound();
+  if("Player Wins!"){
+      playerScore++;
+      if("Computer Wins!"){
+        computerScore++;
+      }
+    }
+
+    if(computerScore > playerScore){
+      alert("Sorry, Computer Wins!");
+      if(playerScore > computerScore){
+        alert("Congratulations! You Win!");
+      }
+      else{
+        alert("TIE GAME!")
+      }
+    } 
+  }
+   
+}
+playGame();
+ 
