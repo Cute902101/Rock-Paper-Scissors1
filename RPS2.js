@@ -30,6 +30,7 @@ let compareInputs = (humanInput, computerInput) => {
     if(humanInput === computerInput){
       return("TIE");
     }
+
     if(humanInput === "rock"){
       if(computerInput === "scissors"){
         return("Player Wins!");
@@ -38,6 +39,34 @@ let compareInputs = (humanInput, computerInput) => {
         return("Computer Wins!");
       }
     } 
+
+    if(humanInput === "paper"){
+      if(computerInput === "rock"){
+        return("Player Wins!");
+      }
+      else{
+        return("Computer Wins!");
+      }
+    }
+
+    if(humanInput === "scissors"){
+      if(computerInput === "paper"){
+        return("Player Wins!");
+      }
+      else{
+        return("Computer Wins!");
+      }
+    }
     
 }
-console.log(compareInputs());
+
+//Function to play a game of Rock Paper Scissors
+let playRound = () => {
+  playerInput = playerChoice();
+  computerInput = getComputerChoice();
+  console.log(compareInputs(playerInput, computerInput));
+
+  
+}
+playRound();
+
