@@ -10,7 +10,6 @@ let getComputerChoice = () => {
       return "scissors";
   }  
 }
-  console.log(getComputerChoice());
 
 // Function to call Player Choice
 let playerChoice = (playerInput) => 
@@ -25,5 +24,20 @@ let playerChoice = (playerInput) =>
     return ("ERROR, try 'Rock', 'Paper', or 'Scissors' ");
   }
 }
-console.log(playerChoice("`${playerInput}`"));
-console.log(playerChoice("uhh"));
+
+// Determine winner of combined inputs
+let compareInputs = (humanInput, computerInput) => {
+    if(humanInput === computerInput){
+      return("TIE");
+    }
+    if(humanInput === "rock"){
+      if(computerInput === "scissors"){
+        return("Player Wins!");
+      }
+      else{
+        return("Computer Wins!");
+      }
+    } 
+    
+}
+console.log(compareInputs());
