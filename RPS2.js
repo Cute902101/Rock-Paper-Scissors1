@@ -11,3 +11,19 @@ let getComputerChoice = () => {
   }  
 }
   console.log(getComputerChoice());
+
+// Function to call Player Choice
+let playerChoice = (playerInput) => 
+{
+  playerInput = prompt("Rock, Paper, or Scissors").toLowerCase();
+  if (playerInput === "rock" ||
+      playerInput === "paper" ||
+      playerInput === "scissors"){
+        return playerInput;
+      }
+  else {
+    return ("ERROR, try 'Rock', 'Paper', or 'Scissors' ");
+  }
+}
+console.log(playerChoice("`${playerInput}`"));
+console.log(playerChoice("uhh"));
