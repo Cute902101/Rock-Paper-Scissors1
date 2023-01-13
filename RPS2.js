@@ -1,3 +1,5 @@
+
+
 //Computer Choice Function 
 let getComputerChoice = () => {
   let randomNumber =  Math.floor(Math.random() * 3);
@@ -60,37 +62,54 @@ let compareInputs = (humanInput, computerInput) => {
     
 }
 
+
 //Function to play a round of Rock Paper Scissors
 let playRound = () => {
   playerInput = playerChoice();
   computerInput = getComputerChoice();
   console.log(compareInputs(playerInput, computerInput));
+  return(compareInputs(playerInput, computerInput));
 }
+
+
 
 //Add 5 rounds to the playRound function 
-let playGame = () =>{
-computerScore = 0
-playerScore = 0
+function resFinal(){
+let compScore = 0;
+let playScore = 0;
+let drawScore = 0;
   for(i = 0; i < 5; i++){
-     playRound();
-  if("Player Wins!"){
-      playerScore++;
-      if("Computer Wins!"){
-        computerScore++;
-      }
-    }
+   roundResult = playRound();
 
-    if(computerScore > playerScore){
-      alert("Sorry, Computer Wins!");
-      if(playerScore > computerScore){
-        alert("Congratulations! You Win!");
+    if(roundResult === "Player Wins!"){
+      playScore++;
+    }
+    if(roundResult === "Computer Wins!"){
+       compScore++; 
       }
-      else{
-        alert("TIE GAME!")
-      }
-    } 
+    if(roundResult === "TIE") {
+        drawScore++;
+      } 
+     
+    
   }
-   
+  alert("Game Over!! Calculating Results...");
+  if(compScore < playScore){
+    alert("PLAYER WON!!!");
+  }
+  if(compScore > playScore){
+    alert("COMPUTER WON!!!");
+  }
+  if(compScore === playScore){
+    alert("TIE!!!!");
+  }
 }
-playGame();
- 
+//To keep score of rounds played
+
+  resFinal();
+   
+
+
+
+
+  
